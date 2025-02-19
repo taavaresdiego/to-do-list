@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+let mongoose = require("mongoose");
 
 const server = "localhost:27017";
 const database = "cripim";
@@ -11,8 +11,23 @@ class Database {
   _connect() {
     mongoose
       .connect(`mongodb://${server}/${database}`)
-      .then(() => console.log("Conectado ao MongoDB!"))
-      .catch((err) => console.error("Erro ao conectar ao MongoDB:", err));
+      .then(() => {
+        console.log("Database connection successful");
+        console.log("Conectado ao banco:", mongoose.connection.name);
+        mongoose.connection.db
+          .listCollections()
+          .toArray()
+          .then((collections) =>
+            console.log(
+              "Collections disponíveis:",
+              collections.map((col) => col.name)
+            )
+          )
+          .catch((err) => console.error(err));
+      })
+      .catch((err) => {
+        console.error("Database connection error");
+      });
   }
 }
 
