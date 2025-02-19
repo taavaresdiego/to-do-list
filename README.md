@@ -15,3 +15,5 @@ Este repositório contém o backend de uma aplicação web robusta, projetada co
 - **Framework:** Express
 - **Banco de dados:** PostgreSQL
 - **Outras tecnologias:** JWT (JSON Web Tokens), GraphQL, TypeORM
+
+## Estrutura do projeto
