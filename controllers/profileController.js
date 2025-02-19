@@ -1,4 +1,4 @@
-const Profile = require("../model/profile.js");
+const Profile = require("../models/profile.js");
 
 const createProfile = async (req, res) => {
   const { occupation, phone, address } = req.body;

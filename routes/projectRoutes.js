@@ -1,5 +1,5 @@
-const Project = require("../model/project.js");
-const Task = require("../model/task.js");
+const Project = require("../models/project.js");
+const Task = require("../models/Task.js");
 
 const createProject = async (req, res) => {
   const { name, description, startDate, endDate } = req.body;

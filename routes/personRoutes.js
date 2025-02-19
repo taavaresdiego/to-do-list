@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const personController = require("../controller/personController.js");
+const personController = require("../controllers/personController.js");
 
 router.get("/person", personController.getAllPersons);
 router.post("/person", personController.createPerson);

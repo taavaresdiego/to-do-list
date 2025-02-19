@@ -1,10 +1,10 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const taskRoutes = require("./route/taskRoute.js");
-const personRoutes = require("./route/personRoutes.js");
-const profileRoutes = require("./route/profileRoutes.js");
-const projectRoutes = require("./route/projectRoutes.js");
-const db = require("./db/db.js");
+const taskRoutes = require("./routes/taskRoutes.js");
+const personRoutes = require("./routes/personRoutes.js");
+const profileRoutes = require("./routes/profileRoutes.js");
+const projectRoutes = require("./routes/projectRoutes.js");
+const db = require("./db/database.js");
 
 const app = express();
 app.use(bodyParser.json()); // Para ler o corpo das requisições como JSON
