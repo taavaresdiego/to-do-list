@@ -1,17 +1,19 @@
-require("./database");
-
 const express = require("express");
 const bodyParser = require("body-parser");
-const cors = require("cors");
-
-require("./database"); // Conexão com MongoDB
-
-const taskRoutes = require("./routes/taskRoutes");
+const taskRoutes = require("./route/taskRoute.js");
+const personRoutes = require("./route/personRoutes.js");
+const profileRoutes = require("./route/profileRoutes.js");
+const projectRoutes = require("./route/projectRoutes.js");
+const db = require("./db/db.js");
 
 const app = express();
-
-app.use(cors());
-app.use(bodyParser.json());
+app.use(bodyParser.json()); // Para ler o corpo das requisições como JSON
 app.use("/api", taskRoutes);
+app.use("/api", personRoutes);
+app.use("/api", profileRoutes);
+app.use("/api", projectRoutes);
 
-app.listen(3000, () => console.log("Servidor rodando na porta 3000"));
+const port = 3000;
+app.listen(port, () => {
+  console.log(`Aplicação rodando na porta ${port}`);
+});
