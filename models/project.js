@@ -1,5 +1,5 @@
 let mongoose = require("mongoose");
-const Task = require("../model/task.js");
+const Task = require("../models/Task.js");
 
 let projectSchema = new mongoose.Schema({
   name: { type: String, required: true },

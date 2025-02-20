@@ -13,7 +13,14 @@ app.use("/api", personRoutes);
 app.use("/api", profileRoutes);
 app.use("/api", projectRoutes);
 
+app.get("/api/projects", projectRoutes.getAllProjects);
+app.post("/api/projects", projectRoutes.createProject);
+app.put("/api/projects/:id", projectRoutes.editProject);
+app.delete("/api/projects/:id", projectRoutes.deleteProject);
+
 const port = 3000;
 app.listen(port, () => {
   console.log(`Aplicação rodando na porta ${port}`);
 });
+
+app.use("/api/projects", projectRoutes); // Usar o roteador para /api/projects

@@ -1,3 +1,6 @@
+const express = require("express");
+const router = express.Router(); // Criar uma instância do roteador
+
 const Project = require("../models/project.js");
 const Task = require("../models/Task.js");
 
@@ -44,3 +47,10 @@ const editProject = async (req, res) => {
 };
 
 module.exports = { createProject, getAllProjects, deleteProject, editProject };
+
+router.get("/", projectController.getAllProjects);
+router.post("/", projectController.createProject);
+router.put("/:id", projectController.editProject);
+router.delete("/:id", projectController.deleteProject);
+
+module.exports = router;
