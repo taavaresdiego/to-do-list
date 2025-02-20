@@ -8,9 +8,9 @@ const createTask = async (req, res) => {
     finished,
   });
 
-  const savedTask = await task.save();
+  const savedTask = await newTask.save(); // Correção: newTask em vez de task
 
-  await newTask.save();
+  // await newTask.save(); // Removido: já salvo na linha anterior
   res.json({
     message: "Tarefa criada com sucesso!",
     task: newTask,
