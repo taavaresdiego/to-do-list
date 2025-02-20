@@ -13,7 +13,7 @@ Este repositório contém o backend de uma aplicação web robusta, projetada co
 
 - **Linguagem de programação:** Node.js
 - **Framework:** Express
-- **Banco de dados:** PostgreSQL
+- **Banco de dados:** MongoDB, Moongose
 - **Outras tecnologias:** JWT (JSON Web Tokens), GraphQL, TypeORM
 
 ## Estrutura do projeto
