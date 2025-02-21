@@ -1,3 +1,5 @@
+const projectController = require("../controllers/projectController.js");
+
 const Project = require("../models/project.js");
 const Task = require("../models/Task.js");
 
